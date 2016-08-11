@@ -5,25 +5,10 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
     <title>Homework</title>
     <link rel="stylesheet" href="main.css">
-    <script type="text/javascript">
-      window.onload = function() {
-        var oTurn = document.getElementById("turn");
-        oTurn.onclick = function () {
-          var strCls = oTurn.className;
-          var str = /photo_front/;
-          if (str.test(strCls)) {
-            strCls = strCls.replace(/photo_front/, 'photo_back');
-          } else {
-            strCls = strCls.replace(/photo_back/, 'photo_front');
-          }
-          return oTurn.className = strCls;
-        }
-      }
-    </script>
   </head>
   <body>
     <div class="wrap">
-      <div id="turn" class="photo photo_center photo_front">
+      <div id="turn" class="photo photo-center photo-front">
         <div  class="photo-wrap">
           <div class="side side-front">
             <div class="page front">
@@ -38,6 +23,7 @@
         </div>
       </div>
     </div>
+    <script src="main.js" type="text/javascript"></script>
   </body>
 </html>
 
