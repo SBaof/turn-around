@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wrap {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  margin-top: -300px;
+  overflow: hidden;
+  background-color: #607D8B;
+
+  perspective: 800px;
+}
+
+.photo {
+  width: 260px;
+  height: 320px;
+  position: absolute;
+  /* box-shadow: 0 0 1px rgba(0, 0, 0, .5); */
+}
+
+.photo .side {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 9px 9px 9px rgba(0, 0, 0, .2);
+}
+
+.photo-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  /*让子元素支持3D效果*/
+  transform-style: preserve-3d;
+  /*设置整个动作的时间*/
+  transition: all .6s;
+}
+
+/*正面沿Y轴旋转0度*/
+.photo-wrap .side-front {
+  transform: rotateY(0deg);
+}
+
+/*反面沿着Y轴旋转180度，保证只有一个面显示*/
+.photo-wrap .side-back {
+  transform: rotateY(180deg);
+}
+
+.photo .side {
+  backface-visibility: hidden;
+}
+
+.photo_front .photo-wrap {
+  transform: rotateY(0deg);
+}
+
+.photo_back .photo-wrap {
+  transform: rotateY(180deg);
+}
+
+.photo_up .photo-wrap {
+  transform: rotateZ(0deg);
+}
+
+.photo_down .photo-wrap {
+  transform: rotateZ(180deg);
+}
+
+
+.photo .side .page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/*将元素居中*/
+.photo_center {
+  left: 50%;
+  right: 50%;
+  margin: 160px 0 0 -130px;
+}
+
+/*正面样式*/
+.front {
+  width: 240px;
+  height: 320px;
+  background-color: #2196F3;
+}
+
+/*反面样式*/
+.back {
+  width: 240px;
+  height: 320px;
+  background-color: #7C4DFF;
+}

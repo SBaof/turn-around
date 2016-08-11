@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript">
+      window.onload = function() {
+        var oTurn = document.getElementById("turn");
+        oTurn.onclick = function () {
+          var strCls = oTurn.className;
+          var str = /photo_front/;
+          if (str.test(strCls)) {
+            strCls = strCls.replace(/photo_front/, 'photo_back');
+          } else {
+            strCls = strCls.replace(/photo_back/, 'photo_front');
+          }
+          return oTurn.className = strCls;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="turn" class="photo photo_center photo_front">
+        <div  class="photo-wrap">
+          <div class="side side-front">
+            <div class="page front">
+              <h1>Front-End</h1>
+            </div>
+          </div>
+          <div class="side side-back">
+            <div class="page back">
+              <h1>Back-End</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
