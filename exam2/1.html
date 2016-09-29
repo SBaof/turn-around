@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>第一题</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .iterm {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+        border-bottom: 1px solid #F5F5F5;
+      }
+
+      .img {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        margin: 5px;
+      }
+
+      .wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .desc {
+        display: flex;
+        margin: 5px;
+        align-items: center;
+      }
+
+      .tag {
+        background: #2196F3;
+        border: 2px solid #2196F3;
+        border-radius: 5px;
+      }
+
+      .btn {
+        color: #fff;
+        background: #2196F3;
+        border: 2px solid #2196F3;
+        border-radius: 5px;
+        font-size: 15px;
+      }
+
+      .title {
+        margin-left: 5px;
+        font-size: 15px;
+      }
+
+      .price {
+        display: flex;
+        margin-bottom: 10px;
+        margin-left: 5px;
+      }
+
+      .new {
+        color: #FF5722;
+      }
+
+      .old {
+        color: #BDBDBD;
+        text-decoration: line-through;
+      }
+
+      .app {
+        height: 30px;
+        width: 320px;
+        border: 2px solid #FF5722;
+        border-radius: 3px;
+        background: #FF5722;
+        align-self: center;
+        color: #fff;
+        font-size: 20px;
+      }
+
+    </style>
+    <meta name="viewport"content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  </head>
+  <body>
+    <div class="container">
+      <div class="iterm">
+        <div class="img">
+          <img src="http://img.gsxservice.com/4282211_hg2ozwzm.jpeg" alt="">
+        </div>
+        <div class="wrap">
+          <div class="desc">
+            <span class="tag"><button class="btn" disabled="disabled">班课</button></span>
+            <span class="title">北京公务员考试行测和申论技巧</span>
+          </div>
+          <div class="price">
+            <div class="new">￥1.10</div>
+            <div class="old">￥68.00</div>
+          </div>
+        </div>
+      </div>
+      <div class="iterm">
+        <div class="img">
+          <img src="http://img.gsxservice.com/3327574_vcx5m65b.jpeg" alt="">
+        </div>
+        <div class="wrap">
+          <div class="desc">
+            <span class="tag"><button class="btn" disabled="disabled">班课</button></span>
+            <span class="title">国考申论备考讲座【针对2017年国考】</span>
+          </div>
+          <div class="price">
+            <div class="new">￥0.00</div>
+            <div class="old">￥99.00</div>
+          </div>
+        </div>
+      </div>
+      <div class="iterm">
+        <div class="img">
+          <img src="http://img.gsxservice.com/19486734_9wlcridz.jpeg" alt="">
+        </div>
+        <div class="wrap">
+          <div class="desc">
+            <span class="tag"><button class="btn" disabled="disabled">班课</button></span>
+            <span class="title">国考刷题班【申论】</span>
+          </div>
+          <div class="price">
+            <div class="new">￥299.00</div>
+            <div class="old">￥399.00</div>
+          </div>
+        </div>
+      </div>
+      <button class="app">下载跟谁学APP了解更多优质课程</button>
+    </div>
+  </body>
+</html>

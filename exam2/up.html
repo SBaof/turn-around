@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>scroll-up</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <style type="text/css">
+      body {
+        height:1200px;
+      }
+
+      .scroll-up {
+        background: red;
+        width:48px;
+        height:48px;
+        position: fixed;
+        opacity: .6;
+        padding:5px;
+        cursor: pointer;
+        display: none;
+
+        border-radius:5px;
+      }
+
+      .test {
+        height: 100px;
+        width: 10000px;
+        border: 1px solid black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- <div class="test"></div> -->
+    <script type="text/javascript">
+      ;(function($) {
+        $.scrollBtn = function(options) {
+          var opts = $.extend({}, $.scrollBtn.defaults, options);
+
+          var $scrollBtn = $('<div></div>').css({
+            bottom: opts.bottom + 'px',
+            right: opts.right + 'px'
+          }).addClass('scroll-up')
+            .attr('title', opts.title)
+            .click(function() {
+              $('html, body').animate({scrollTop: 0}, opts.duration);
+            }).appendTo('body');
+
+          $(window).bind('scroll', function() {
+            var scrollTop = $(document).scrollTop(),
+              viewHeight = $(window).height();
+
+            if(scrollTop <= opts.showScale) {
+              if($scrollBtn.is(':visible'))
+                $scrollBtn.fadeOut(500);
+            } else {
+              if($scrollBtn.is(':hidden'))
+                $scrollBtn.fadeIn(500);
+            }
+
+          });
+        };
+        $.scrollBtn.defaults = {
+          showScale: 60,
+          right:10,
+          bottom:10,
+          duration:100,
+          title:'back to top'
+        }
+      })(jQuery);
+
+$.scrollBtn({
+  showScale: 60,
+  bottom:20,
+  right:20
+});
+    </script>
+  </body>
+</html>
